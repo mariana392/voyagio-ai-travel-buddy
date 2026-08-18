@@ -151,8 +151,12 @@ function Brief({ onGenerate, generating }: { onGenerate: () => void; generating:
             <Chip
               key={`${m}-${i}`}
               label={m}
-              onDelete={i === 0 ? undefined : () => setMembers((list) => list.filter((_, idx) => idx !== i))}
-              deleteIcon={<CloseIcon sx={{ fontSize: 15 }} />}
+              {...(i === 0
+                ? {}
+                : {
+                    onDelete: () => setMembers((list) => list.filter((_, idx) => idx !== i)),
+                    deleteIcon: <CloseIcon sx={{ fontSize: 15 }} />,
+                  })}
               sx={{
                 bgcolor: i === 0 ? alpha(FOREST, 0.09) : alpha(MOSS, 0.14),
                 color: i === 0 ? FOREST : "#2D5C40",
