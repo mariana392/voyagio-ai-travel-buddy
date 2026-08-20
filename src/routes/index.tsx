@@ -630,7 +630,7 @@ function LandingPage() {
               <Step
                 n="03"
                 title="Enjoy the trip"
-                body="Less organising. More experiencing."
+                body="More experiencing. AI keeps everyone on track — with ideas, reminders and smart nudges at the right moment."
                 photoId="photo-1507525428034-b723cf961d3e"
               />
             </Box>
