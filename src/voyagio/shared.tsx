@@ -5,17 +5,11 @@ import { theme } from "./theme";
 
 // ─── Organic blob SVG ─────────────────────────────────────────────────────────
 export function Blob({ color, sx }: { color: string; sx?: object }) {
-  return (
-    <Box component="svg" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg"
-      sx={{ position: "absolute", pointerEvents: "none", ...sx }}
-      aria-hidden="true"
-    >
-      <path
-        fill={color}
-        d="M300,50 C420,20 560,120 560,250 C560,380 440,470 300,460 C160,450 40,370 40,250 C40,130 180,80 300,50Z"
-      />
-    </Box>
-  );
+  // Background blobs disabled by request — keep API for existing call sites.
+  void color;
+  void sx;
+  void Box;
+  return null;
 }
 
 // ─── SafeThemeProvider — absorbs Figma inspector data-* props ────────────────
