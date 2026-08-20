@@ -522,12 +522,8 @@ function LandingPage() {
                   rotate={-4}
                   sx={{ display: { xs: "none", md: "block" }, top: 16, left: -24, zIndex: 2 }}
                 />
-                <FloatingPhoto
-                  photoId="photo-1507525428034-b723cf961d3e"
-                  label="Beach, Maldives"
-                  rotate={3}
-                  sx={{ display: { xs: "none", md: "block" }, bottom: 24, right: -20, zIndex: 2 }}
-                />
+
+
 
                 {/* product card */}
                 <Box sx={{ position: "relative", zIndex: 3, width: "100%", maxWidth: 420 }}>
