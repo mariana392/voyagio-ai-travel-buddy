@@ -444,9 +444,15 @@ function LandingPage() {
           >
             Voyagio
           </Typography>
-          <Button component={Link} to="/plan" size="medium" sx={{ px: 3 }}>
-            Get Started
-          </Button>
+          <Stack direction="row" alignItems="center" gap={1.25}>
+            <Button component={Link} to="/login" variant="outlined" color="primary" size="medium" sx={{ px: 3 }}>
+              Log in
+            </Button>
+            <Button component={Link} to="/plan" size="medium" sx={{ px: 3 }}>
+              Get Started
+            </Button>
+          </Stack>
+
         </Toolbar>
       </AppBar>
 
