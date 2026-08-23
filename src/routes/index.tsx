@@ -444,9 +444,15 @@ function LandingPage() {
           >
             Voyagio
           </Typography>
-          <Button component={Link} to="/plan" size="medium" sx={{ px: 3 }}>
-            Get Started
-          </Button>
+          <Stack direction="row" alignItems="center" gap={1.25}>
+            <Button component={Link} to="/login" variant="outlined" color="primary" size="medium" sx={{ px: 3 }}>
+              Log in
+            </Button>
+            <Button component={Link} to="/plan" size="medium" sx={{ px: 3 }}>
+              Get Started
+            </Button>
+          </Stack>
+
         </Toolbar>
       </AppBar>
 
@@ -516,12 +522,7 @@ function LandingPage() {
               {/* hero visual */}
               <Box sx={{ position: "relative", display: "flex", justifyContent: { xs: "center", md: "flex-end" }, minHeight: { xs: "auto", md: 520 }, alignItems: "center" }}>
                 {/* floating photos — visible on md+ */}
-                <FloatingPhoto
-                  photoId="photo-1529156069898-49953e39b3ac"
-                  label="Friends trip"
-                  rotate={-4}
-                  sx={{ display: { xs: "none", md: "block" }, top: 16, left: -24, zIndex: 2 }}
-                />
+
 
 
 
