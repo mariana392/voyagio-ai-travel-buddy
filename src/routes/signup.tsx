@@ -16,7 +16,6 @@ import Paper from "@mui/material/Paper";
 import LinearProgress from "@mui/material/LinearProgress";
 import Divider from "@mui/material/Divider";
 import Switch from "@mui/material/Switch";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -309,9 +308,6 @@ function SignupPage() {
         <AppBar position="sticky" elevation={0}>
           <Container maxWidth="lg">
             <Toolbar disableGutters sx={{ minHeight: { xs: 62, md: 70 }, gap: 1.5 }}>
-              <IconButton component={Link} to="/" size="small" sx={{ color: FOREST }} aria-label="Back to home">
-                <ArrowBackIcon sx={{ fontSize: 20 }} />
-              </IconButton>
               <Typography sx={{ fontWeight: 800, fontSize: "1.05rem", color: FOREST, letterSpacing: "-0.02em" }}>
                 Voyagio
               </Typography>
@@ -397,10 +393,10 @@ function SignupPage() {
                 )}
 
                 <Stack direction={{ xs: "column", sm: "row" }} gap={1.25} justifyContent="center" mt={3}>
-                  <Button size="large" color="primary" onClick={() => go(1)}>
+                  <Button size="medium" color="primary" sx={{ px: 3 }} onClick={() => go(1)}>
                     Get started
                   </Button>
-                  <Button size="large" variant="outlined" color="primary" onClick={() => { setMethod("Log in"); go(1); }}>
+                  <Button size="medium" variant="outlined" color="primary" sx={{ px: 3 }} onClick={() => { setMethod("Log in"); go(1); }}>
                     Log in
                   </Button>
                 </Stack>
@@ -466,12 +462,13 @@ function SignupPage() {
                         <Button
                           variant="outlined"
                           color="primary"
-                          sx={{ flex: 1 }}
+                          size="medium"
+                          sx={{ px: 3 }}
                           onClick={() => { setMethod("Log in"); go(2); }}
                         >
                           Log in instead
                         </Button>
-                        <Button variant="outlined" color="primary" sx={{ flex: 1 }} onClick={() => { setMethod("Reset"); go(2); }}>
+                        <Button variant="outlined" color="primary" size="medium" sx={{ px: 3 }} onClick={() => { setMethod("Reset"); go(2); }}>
                           Reset password
                         </Button>
                       </Stack>
@@ -480,8 +477,9 @@ function SignupPage() {
                   <Stack direction={{ xs: "column", sm: "row" }} gap={1.25}>
                     <Button
                       color="primary"
+                      size="medium"
+                      sx={{ px: 3 }}
                       onClick={() => { setMethod("Email"); if (!emailTaken) go(2); }}
-                      sx={{ flex: 1 }}
                       startIcon={<MailOutlineIcon />}
                     >
                       Create account
@@ -489,8 +487,9 @@ function SignupPage() {
                     <Button
                       variant="outlined"
                       color="primary"
+                      size="medium"
+                      sx={{ px: 3 }}
                       onClick={() => { setMethod("Log in"); go(2); }}
-                      sx={{ flex: 1 }}
                       startIcon={<LoginIcon />}
                     >
                       Log in
@@ -580,7 +579,8 @@ function SignupPage() {
                   </Button>
                   <Button
                     color="primary"
-                    sx={{ flex: 1 }}
+                    size="medium"
+                    sx={{ px: 3 }}
                     disabled={method !== "Apple" && method !== "Google" && code !== "4821"}
                     onClick={() => go(3)}
                   >
@@ -646,7 +646,8 @@ function SignupPage() {
                   </Button>
                   <Button
                     color="primary"
-                    sx={{ flex: 1 }}
+                    size="medium"
+                    sx={{ px: 3 }}
                     startIcon={<PersonOutlineIcon />}
                     disabled={name.trim().length === 0}
                     onClick={() => go(4)}
@@ -696,7 +697,8 @@ function SignupPage() {
                   </Button>
                   <Button
                     color="primary"
-                    sx={{ flex: 1 }}
+                    size="medium"
+                    sx={{ px: 3 }}
                     startIcon={<AutoAwesomeOutlinedIcon />}
                     onClick={() => { setAiSkipped(false); go(5); }}
                   >
@@ -795,7 +797,7 @@ function SignupPage() {
                   <Button variant="outlined" color="primary" onClick={() => { setAiSkipped(true); go(6); }}>
                     Skip for now
                   </Button>
-                  <Button color="primary" sx={{ flex: 1 }} startIcon={<AutoAwesomeOutlinedIcon />} onClick={() => go(6)}>
+                  <Button color="primary" size="medium" sx={{ px: 3 }} startIcon={<AutoAwesomeOutlinedIcon />} onClick={() => go(6)}>
                     Save preferences
                   </Button>
                 </Stack>
@@ -903,7 +905,7 @@ function SignupPage() {
                   <Button variant="outlined" color="primary" onClick={() => go(aiSkipped ? 4 : 5)}>
                     Back
                   </Button>
-                  <Button color="primary" sx={{ flex: 1 }} disabled={!canContinueChoice} onClick={() => go(7)}>
+                  <Button color="primary" size="medium" sx={{ px: 3 }} disabled={!canContinueChoice} onClick={() => go(7)}>
                     {next === "join" ? "Join trip" : "Create trip"}
                   </Button>
                 </Stack>
@@ -986,7 +988,7 @@ function SignupPage() {
                   <Button variant="outlined" color="primary" onClick={() => go(6)}>
                     Back
                   </Button>
-                  <Button color="primary" sx={{ flex: 1 }} disabled={!notifications} onClick={() => go(8)}>
+                  <Button color="primary" size="medium" sx={{ px: 3 }} disabled={!notifications} onClick={() => go(8)}>
                     Continue
                   </Button>
                 </Stack>
@@ -1054,13 +1056,13 @@ function SignupPage() {
                     ))}
                   </Stack>
                   <Stack direction={{ xs: "column", sm: "row" }} gap={1.25} mt={2.5}>
-                    <Button color="primary" sx={{ flex: 1 }} startIcon={<PersonAddAltOutlinedIcon />}>
+                    <Button color="primary" size="medium" sx={{ px: 3 }} startIcon={<PersonAddAltOutlinedIcon />}>
                       {next === "join" ? "Say hi to the group" : "Invite friends"}
                     </Button>
-                    <Button component={Link} to="/plan" variant="outlined" color="primary" sx={{ flex: 1 }}>
+                    <Button component={Link} to="/plan" variant="outlined" color="primary" size="medium" sx={{ px: 3 }}>
                       Open the planner
                     </Button>
-                    <Button variant="outlined" color="primary" onClick={() => go(0)}>
+                    <Button variant="outlined" color="primary" size="medium" sx={{ px: 3 }} onClick={() => go(0)}>
                       Restart the flow
                     </Button>
                   </Stack>

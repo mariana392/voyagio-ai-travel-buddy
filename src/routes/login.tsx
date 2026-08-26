@@ -367,7 +367,8 @@ function LoginPage() {
                             onChange={(e) => setNewPassword(e.target.value)}
                           />
                           <Button
-                            size="small"
+                            size="medium"
+                            sx={{ px: 3 }}
                             disabled={newPassword.length < 6}
                             onClick={() => {
                               setPassword(newPassword);
@@ -395,7 +396,8 @@ function LoginPage() {
 
                   <Stack direction="row" gap={1.25} flexWrap="wrap" alignItems="center">
                     <Button
-                      size="large"
+                      size="medium"
+                      sx={{ px: 3 }}
                       startIcon={<LockOutlinedIcon />}
                       disabled={email.trim().length === 0 || password.length === 0}
                       onClick={() => {
@@ -422,6 +424,8 @@ function LoginPage() {
                       to="/signup"
                       variant="outlined"
                       color="primary"
+                      size="medium"
+                      sx={{ px: 3 }}
                       startIcon={<PersonAddAltOutlinedIcon />}
                     >
                       Create account
@@ -462,7 +466,7 @@ function LoginPage() {
                     />
                     {codeInvalid ? <ErrorNote>That code isn't right. Check the email or send a new one.</ErrorNote> : null}
                     <Stack direction="row" gap={1.25} flexWrap="wrap">
-                      <Button size="large" disabled={code !== "4821"} onClick={() => go(2)}>
+                      <Button size="medium" sx={{ px: 3 }} disabled={code !== "4821"} onClick={() => go(2)}>
                         Verify and continue
                       </Button>
                       <Button variant="outlined" color="primary" onClick={() => setResends((r) => r + 1)}>
@@ -482,7 +486,7 @@ function LoginPage() {
                       </Typography>
                     </Stack>
                     <Stack direction="row" gap={1.25} flexWrap="wrap">
-                      <Button size="large" onClick={() => go(2)}>
+                      <Button size="medium" sx={{ px: 3 }} onClick={() => go(2)}>
                         Continue
                       </Button>
                       <Button variant="text" color="primary" onClick={() => go(0)}>
@@ -536,10 +540,10 @@ function LoginPage() {
                   </Stack>
 
                   <Stack direction="row" gap={1.25} flexWrap="wrap" mt={2.5}>
-                    <Button component={Link} to="/plan" size="large">
+                    <Button component={Link} to="/plan" size="medium" sx={{ px: 3 }}>
                       Open trip dashboard
                     </Button>
-                    <Button variant="outlined" color="primary" onClick={() => go(0)}>
+                    <Button variant="outlined" color="primary" size="medium" sx={{ px: 3 }} onClick={() => go(0)}>
                       Log out
                     </Button>
                   </Stack>
